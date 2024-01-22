@@ -1,4 +1,4 @@
-#projects {
+.projects {
   background-color: $white-color;
   color: $dark-blue-text;
   margin-top: -10rem;
@@ -38,6 +38,15 @@
         font-weight: bold;
         margin-bottom: 1.8rem;
         font-size: $mid-font-size;
+
+        @include respond(phone) {
+          font-size: 2rem;
+        }
+      }
+      &-date {
+        font-weight: bold;
+        margin-bottom: 1.8rem;
+        font-size: $default-font-size;
 
         @include respond(phone) {
           font-size: 2rem;
