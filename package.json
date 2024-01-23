@@ -5,7 +5,7 @@
   "description": "Abbas Meghani, Portfolio!",
   "source": "src/index.html",
   "scripts": {
-    "start": "npx parcel",
+    "start": "npx parcel --port 8080",
     "build": "parcel build"
   },
   "repository": {
