@@ -31,13 +31,6 @@ RUN --mount=type=bind,source=package.json,target=package.json \
 # Create a stage for building the application.
 FROM deps as build
 
-# Download additional development dependencies before building, as some projects require
-# "devDependencies" to be installed to build. If you don't need this, remove this step.
-RUN --mount=type=bind,source=package.json,target=package.json \
-    --mount=type=bind,source=package-lock.json,target=package-lock.json \
-    --mount=type=cache,target=/root/.npm \
-    npm ci
-
 # Copy the rest of the source files into the image.
 COPY . .
 # Run the build script.
@@ -62,7 +55,7 @@ COPY --from=build /usr/src/app/dist ./dist
 COPY --from=build /usr/src/app/src ./src
 
 # Expose the port that the application listens on.
-EXPOSE 1234
+EXPOSE 8080
 
 # Run the application.
 CMD npm start
