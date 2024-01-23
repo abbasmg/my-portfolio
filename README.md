@@ -4,20 +4,20 @@ Welcome to my GitHub portfolio! 🚀 Explore my projects, learn about my experie
 
 ## TODOs
 
-- [ ] **Get Template**
+- [X] **Get Template**
   - Find a suitable GitHub Portfolio Template
 
-- [ ] **Modify existing sections**
-  - [ ] Update Title
-  - [ ] Update About
-  - [ ] Update Projects
-  - [ ] Update Contact
+- [X] **Modify existing sections**
+  - [X] Update Title
+  - [X] Update About
+  - [X] Update Projects
+  - [X] Update Contact
 
-- [ ] **Change CSS and js to accommodate more sections**
-  - [ ] Update Education
-  - [ ] Update Experience.
+- [X] **Change CSS and js to accommodate more sections**
+  - [X] Update Education
+  - [X] Update Experience.
 
-- [ ] **Containerize using Docker**
+- [X] **Containerize using Docker**
   - Create a Docker image
 - [ ] **Deploy**
   - Deploy the Docker Image on Google Cloud using repo
