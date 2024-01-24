@@ -80,6 +80,11 @@
       width: 100%;
     }
   }
+  }
+
+.cta-btn-top{
+  @extend .cta-btn--hero;
+  width: 100%
 }
 
 /* Resume Style */
