@@ -2,6 +2,8 @@
 
 Welcome to my GitHub portfolio! 🚀 Explore my projects, learn about my experiences, and get in touch.
 
+Currently, live at https://abbasmeghani.com/
+
 ## TODOs
 
 - [X] **Get Template**
@@ -19,11 +21,7 @@ Welcome to my GitHub portfolio! 🚀 Explore my projects, learn about my experie
 
 - [X] **Containerize using Docker**
   - Create a Docker image
-- [ ] **Deploy**
-  - Deploy the Docker Image on Google Cloud using repo
-
+- [X] **Deploy**
+  - Deploy the Docker Image on Google Cloud Run
 - [ ] **Add More Projects**
   - Include additional projects and update the Projects section.
-
-- [ ] **Try to find source code for projects**
-  - Search for the source code of your projects and add them to GitHub.
