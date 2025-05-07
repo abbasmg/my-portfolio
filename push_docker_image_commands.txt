@@ -1,7 +1,9 @@
-docker image tag my-portfolio-server:latest gcr.io/$ProjectId/my-portfolio-server:latest
+docker compose up --build
 
-gcloud auth configure-docker
+docker image tag my-portfolio-server:latest gcr.io/<projectid>/my-portfolio:latest
 
-docker push gcr.io/$ProjectId/my-portfolio-server:latest
+gcloud auth login
 
-gcloud run deploy --image=gcr.io/$ProjectId/my-portfolio-server:latest --port=8080 --region=us-central1 --allow-unauthenticated --platform=managed 
+docker push gcr.io/<projectid>/my-portfolio:latest
+
+gcloud run deploy --image=gcr.io/<projectid>/my-portfolio:latest --port=8080 --region=us-central1 --allow-unauthenticated --platform=managed 
