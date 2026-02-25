@@ -4,7 +4,9 @@
   display: flex;
   align-items: center;
   border-bottom: 0px;
-  background: var(--bg-primary);
+  background-image: url("./assets/day-mode-background.jpg");
+  background-size: cover;
+  background-position: center;
   font-weight: 400;
   color: var(--text-primary);
   padding: 0rem 5.6rem;
@@ -15,17 +17,30 @@
   right: 0;
   z-index: -1;
 
-  // Set position sticky so the jumbotron stays fixed while you scroll.
-  // position: sticky;
-
-  // If you want to set a background image on the hero section, uncomment these with your custom image
-
-  /* background: url("/src/assets/[your-image].png");
-  background-position: center;
-  background-size: cover; */
+  @at-root [data-theme="dark"] & {
+    background-image: url("./assets/night-mode-background.jpg");
+  }
 
   @include respond(phone) {
     padding: 0rem $default-font-size;
+  }
+
+  & > .container {
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-radius: 1.6rem;
+    padding: 4rem 4.8rem;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+
+    @at-root [data-theme="dark"] & {
+      background: rgba(10, 15, 23, 0.65);
+      border-color: rgba(255, 255, 255, 0.08);
+    }
+
+    @include respond(phone) {
+      padding: 3rem 2rem;
+    }
   }
 
   .hero-title {
@@ -82,6 +97,61 @@
 
       @include respond(phone) {
         font-size: 2rem;
+      }
+    }
+  }
+
+  // Light mode: teal (~2.7:1 on white glass) is unreadable.
+  // Override text, border and hover fill to dark navy (10.7:1 on white).
+  .text-color-main {
+    background-image: none !important;
+    -webkit-text-fill-color: $dark-blue-text !important;
+    color: $dark-blue-text !important;
+  }
+
+  .cta-btn-top {
+    background-image: none !important;
+    -webkit-text-fill-color: $dark-blue-text !important;
+    color: $dark-blue-text !important;
+    border: 2px solid $dark-blue-text !important;
+
+    &::after {
+      background-image: none !important;
+      background: $dark-blue-text !important;
+    }
+
+    &:hover {
+      -webkit-text-fill-color: $white-color !important;
+    }
+  }
+
+  // Dark mode: restore full teal gradient on text, border and hover fill.
+  @at-root [data-theme="dark"] & {
+    .text-color-main {
+      background-image: linear-gradient(135deg, $primary-color 0%, $secondary-color 100%) !important;
+      -webkit-background-clip: text !important;
+      -webkit-text-fill-color: transparent !important;
+      color: transparent !important;
+    }
+
+    .cta-btn-top {
+      background-image: linear-gradient(135deg, $primary-color 0%, $secondary-color 100%) !important;
+      -webkit-background-clip: text !important;
+      -webkit-text-fill-color: transparent !important;
+      color: transparent !important;
+      -webkit-border-image: -webkit-linear-gradient(135deg, $primary-color 0%, $secondary-color 100%) !important;
+      -moz-border-image: -moz-linear-gradient(135deg, $primary-color 0%, $secondary-color 100%) !important;
+      border-image: linear-gradient(135deg, $primary-color 0%, $secondary-color 100%) !important;
+      -webkit-border-image-slice: 1 !important;
+      border-image-slice: 1 !important;
+
+      &::after {
+        background: none !important;
+        background-image: linear-gradient(135deg, $primary-color 0%, $secondary-color 100%) !important;
+      }
+
+      &:hover {
+        -webkit-text-fill-color: $white-color !important;
       }
     }
   }

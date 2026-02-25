@@ -2,7 +2,7 @@ export default function initDarkMode() {
   const toggle = document.getElementById('darkModeToggle');
   const root = document.documentElement;
 
-  const saved = localStorage.getItem('theme') || 'light';
+  const saved = localStorage.getItem('theme') || 'dark';
   root.setAttribute('data-theme', saved);
   updateIcon(saved);
 
