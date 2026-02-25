@@ -1,6 +1,6 @@
 .projects {
-  background-color: $white-color;
-  color: $dark-blue-text;
+  background-color: var(--bg-section);
+  color: var(--text-primary);
   margin-top: -10rem;
   padding-top: 15rem;
 
@@ -26,6 +26,17 @@
 
     &__text {
       text-align: left;
+      background: var(--card-bg);
+      backdrop-filter: blur(8px);
+      border: 1px solid var(--card-border);
+      border-radius: 1.2rem;
+      padding: 2.4rem;
+      box-shadow: 0 4px 16px var(--card-shadow);
+      transition: box-shadow 0.3s ease;
+
+      &:hover {
+        box-shadow: 0 8px 28px var(--card-shadow);
+      }
 
       @include respond(phone) {
         margin-bottom: 2.5rem !important;
@@ -77,7 +88,7 @@
           0.5s -webkit-transform cubic-bezier(0.155, 1.105, 0.295, 1.12);
 
         @include respond(phone) {
-          border: 1px solid $light-grey;
+          border: 1px solid var(--thumbnail-border);
           box-shadow: none;
           margin-bottom: 3.2rem;
         }
