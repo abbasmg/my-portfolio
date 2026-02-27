@@ -3,3 +3,4 @@ dist/
 .parcel-cache
 push_docker_image_commands.txt
 CLAUDE.md
+.claude/
