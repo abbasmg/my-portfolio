@@ -6,7 +6,7 @@
   "source": "src/index.html",
   "scripts": {
     "start": "parcel --port 8080",
-    "build": "parcel build"
+    "build": "parcel build && cp src/_headers dist/_headers"
   },
   "repository": {
     "type": "git",
