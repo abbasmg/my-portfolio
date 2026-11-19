@@ -1,45 +1,63 @@
 # My Portfolio
 
-Welcome to my GitHub portfolio! 🚀 Explore my projects, learn about my experiences, and get in touch.
+Personal portfolio of Abbas Meghani, Senior Data Scientist. Live at https://abbasmeghani.com/
 
-Currently, live at https://abbasmeghani.com/
+## Stack
 
-## TODOs
+- Static site: HTML, SCSS and vanilla JS, bundled with [Parcel](https://parceljs.org/)
+- No runtime dependencies: icons are inline SVG, scroll reveal uses `IntersectionObserver`
+- Light/dark theme (light by default) with a Toronto day/night hero
+- Docker multi-stage build: Node builds `dist/`, then `nginx:alpine` serves it on port 8080
+- Hosted on Google Cloud Run (scale to zero, max 3 instances)
 
-- [X] **Get Template**
-  - Find a suitable GitHub Portfolio Template
+## Run locally
 
-- [X] **Modify existing sections**
-  - [X] Update Title
-  - [X] Update About
-  - [X] Update Projects
-  - [X] Update Contact
+With Node 20:
 
-- [X] **Change CSS and js to accommodate more sections**
-  - [X] Update Education
-  - [X] Update Experience.
+```sh
+npm install
+npm start          # dev server on http://localhost:8080
+```
 
-- [X] **Containerize using Docker**
-  - Multi-stage build: Node/Parcel builds `dist/` → nginx:alpine serves it
-- [X] **Deploy**
-  - Deploy on Google Cloud Run (scale-to-zero, max 3 instances, budget alerts at $5/$10)
+Or exactly as production, with Docker:
 
-- [X] **Dark Mode**
-  - Toggle button (fixed top-right, moon/sun icon swap)
-  - CSS custom properties on `:root` / `[data-theme="dark"]`
-  - Default: light mode (falls back to `'light'` if no localStorage preference)
+```sh
+docker build -t my-portfolio .
+docker run --rm -p 8080:8080 my-portfolio
+```
 
-- [X] **Theme-aware Hero Background**
-  - Light: Toronto day image · Dark: Toronto night image
-  - Images compressed with sharp-cli (mozjpeg q75, max 1920px) — ~290KB each
-  - Frosted glass panel with `backdrop-filter: blur(16px)`
+## Deploy to Cloud Run
 
-- [X] **Security Headers**
-  - `X-Frame-Options`, `X-Content-Type-Options`, `Referrer-Policy`, `HSTS`, `CSP`, `Permissions-Policy` in nginx.conf
-  - `server_tokens off`
+Run these in **Google Cloud Shell** (the `>_` icon at the top right of the GCP console), or anywhere `gcloud` is installed:
 
-- [X] **Frosted Glass Card Style**
-  - Project cards use `backdrop-filter: blur(8px)`, `var(--card-bg)`, `border-radius: 1.2rem`
+```sh
+git clone https://github.com/abbasmg/my-portfolio.git   # or: cd my-portfolio && git pull
+cd my-portfolio
 
-- [ ] **Add More Projects**
-  - Include additional projects and update the Projects section.
+gcloud config set project my-portfolio-412007
+
+gcloud run deploy my-portfolio \
+  --source . \
+  --region us-central1 \
+  --port 8080 \
+  --allow-unauthenticated \
+  --max-instances 3
+```
+
+`--source .` sends the code to Cloud Build, which builds the `Dockerfile` and stores the image in Artifact Registry, then rolls out a new revision. The first time, `gcloud` may ask to enable the Cloud Build and Artifact Registry APIs; answer yes. The custom domain mapping stays on the service, so abbasmeghani.com picks up the new revision automatically.
+
+> Use the same service name and region as the existing service (check the Cloud Run console). Deploying under a different name creates a second service instead of updating the live one.
+
+## Project layout
+
+```
+src/
+  index.html          page content
+  index.js            entry: theme, nav, scroll reveal
+  scripts/            small JS modules (theme-init.js runs before paint)
+  styles.scss         Sass entry
+  styles/             tokens, base, components, layout, sections
+  assets/             images and PDFs, including resume.pdf
+nginx.conf            security headers, caching, gzip
+Dockerfile            build + serve
+```

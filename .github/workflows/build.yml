@@ -1,0 +1,26 @@
+name: Build
+
+# Checks that the site and its Docker image build on every push and PR.
+# Deployment to Cloud Run is manual (see README).
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - run: npm ci
+      - run: npm run build
+
+      - name: Build Docker image
+        run: docker build -t my-portfolio:ci .

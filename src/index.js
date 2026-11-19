@@ -1,10 +1,9 @@
-import initScrollReveal from "./scripts/scrollReveal";
-import initTiltEffect from "./scripts/tiltAnimation";
-import { targetElements, defaultProps } from "./data/scrollRevealConfig";
-import lazyDownload from "./scripts/lazyDownload";
-import initDarkMode from "./scripts/darkMode";
+import initTheme from './scripts/theme';
+import initNav from './scripts/nav';
+import initReveal from './scripts/reveal';
 
-initScrollReveal(targetElements, defaultProps);
-initTiltEffect();
-lazyDownload();
-initDarkMode();
+initTheme();
+initNav();
+initReveal();
+
+document.getElementById('year').textContent = new Date().getFullYear();

@@ -1,772 +1,521 @@
 <!DOCTYPE html>
-<html lang="en" class="sr">
+<html lang="en" data-theme="light">
 
 <head>
   <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="shortcut icon" type="image/png" href="assets/favicon.png" />
+  <title>Abbas Meghani | Senior Data Scientist</title>
+  <meta name="description"
+    content="Abbas Meghani is a Senior Data Scientist in Toronto building ML and data systems for fraud detection at enterprise scale. MSc Data Science (HEC Montréal), published ML researcher." />
+  <meta name="keywords"
+    content="Abbas Meghani, abbasmg, Senior Data Scientist, Data Scientist, Machine Learning, Fraud Detection, Toronto" />
+  <meta name="author" content="Abbas Meghani" />
+  <meta name="theme-color" content="#f7f6f2" />
 
-  <title>Abbas Meghani | Software Engineer | Data Scientist</title>
-  <!-- Todo: add some coding keywords below - e.g: (javascript, yourusername, etc) -->
-  <meta name="keywords" content="abbasmg, Abbas Meghani, Mohammad Abbas Meghani, Software Engineer, Data Scientist" />
-  <!-- Todo: improve your SEO by adding a small description of you -->
-  <meta name="description" content="Abbas Meghani | Software Engineer" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Abbas Meghani | Senior Data Scientist" />
+  <meta property="og:description"
+    content="ML and data systems for fraud detection at enterprise scale. MSc Data Science, published ML researcher." />
+  <meta property="og:url" content="https://abbasmeghani.com/" />
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" />
   <link rel="stylesheet" href="styles.scss" />
-  <script defer src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
 
-  <!-- Todo: remove the below script once you finish your portfolio -->
-  <script async defer src="https://buttons.github.io/buttons.js"></script>
+  <!-- Sets the theme before first paint to avoid a flash -->
+  <script src="scripts/theme-init.js"></script>
 </head>
 
-<!-- Todo: read the following HTML Todos to create your stunning portfolio website -->
-
 <body>
-  <div id="top"></div>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- **** Hero Section **** -->
-  <section id="hero" class="jumbotron">
-    <div class="container">
-      <h1 class="hero-title load-hidden">
-        Hi, my name is <span class="text-color-main">Abbas Meghani</span>
-        <br />
-        I am a Software Engineer with experience in data-intensive backends and Machine Learning research.
-      </h1>
-      <p class="hero-cta load-hidden">
-        <a rel="noreferrer" class="cta-btn cta-btn-top" href="#about">About Me</a>
-      </p>
-      <br>
-      <h1 class="hero-subtitle load-hidden text-color-main">
-        Or jump to any of the following sections
-      </h1>
+  <!-- **** Navigation **** -->
+  <header class="nav" id="top">
+    <div class="container nav__inner">
+      <a class="nav__brand" href="#top" aria-label="Abbas Meghani, back to top">AM<span>.</span></a>
 
+      <nav class="nav__links" id="navLinks" aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#research">Research</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="nav__actions">
+        <button id="themeToggle" class="icon-btn" type="button" aria-label="Toggle dark mode">
+          <svg class="icon icon--moon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" />
+          </svg>
+          <svg class="icon icon--sun" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="4.5" />
+            <path
+              d="M12 1.5v2.5M12 20v2.5M4.6 4.6l1.8 1.8M17.6 17.6l1.8 1.8M1.5 12H4M20 12h2.5M4.6 19.4l1.8-1.8M17.6 6.4l1.8-1.8" />
+          </svg>
+        </button>
+        <a class="btn btn--small btn--primary nav__resume" href="assets/resume.pdf" target="_blank"
+          rel="noreferrer">Resume</a>
+        <button id="menuToggle" class="icon-btn nav__menu" type="button" aria-label="Open menu"
+          aria-controls="navLinks" aria-expanded="false">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4 7h16M4 12h16M4 17h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- **** Hero **** -->
+    <section class="hero">
+      <div class="hero__bg" aria-hidden="true"></div>
+      <div class="container hero__inner">
+        <p class="eyebrow reveal">Senior Data Scientist · Toronto, Canada</p>
+        <h1 class="hero__title reveal">
+          Abbas Meghani
+        </h1>
+        <p class="hero__lead reveal">
+          I build the ML and data systems behind fraud detection at enterprise scale, from feature
+          pipelines to model inputs, backed by an MSc in Data Science and published ML research.
+        </p>
+        <div class="hero__cta reveal">
+          <a class="btn btn--primary" href="#experience">See my work</a>
+          <a class="btn btn--ghost" href="assets/resume.pdf" target="_blank" rel="noreferrer">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 3v12m0 0-4.5-4.5M12 15l4.5-4.5M4 17v2.5A1.5 1.5 0 0 0 5.5 21h13a1.5 1.5 0 0 0 1.5-1.5V17" />
+            </svg>
+            Download resume
+          </a>
+        </div>
+        <ul class="hero__social reveal" aria-label="Profiles">
+          <li>
+            <a href="https://www.linkedin.com/in/abbasmeghani/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+              <svg class="icon icon--fill" viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z" />
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/abbasmg" target="_blank" rel="noreferrer" aria-label="GitHub">
+              <svg class="icon icon--fill" viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M12 .3a12 12 0 0 0-3.8 23.38c.6.12.83-.26.83-.57L9 21.07c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.09-.73.09-.73 1.2.09 1.83 1.24 1.83 1.24 1.07 1.83 2.81 1.3 3.5 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 0 1 1.23 3.22c0 4.61-2.8 5.63-5.48 5.92.42.36.81 1.1.81 2.22l-.01 3.29c0 .31.2.69.82.57A12 12 0 0 0 12 .3" />
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a href="mailto:abbmeghani@gmail.com" aria-label="Email">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="3" y="5" width="18" height="14" rx="2" />
+                <path d="m3.5 6.5 8.5 6.5 8.5-6.5" />
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- **** Highlights **** -->
+    <section class="stats" aria-label="Highlights">
+      <div class="container stats__grid">
+        <div class="stat reveal">
+          <span class="stat__value">5+</span>
+          <span class="stat__label">years building production data &amp; ML systems</span>
+        </div>
+        <div class="stat reveal">
+          <span class="stat__value">15+</span>
+          <span class="stat__label">enterprise clients onboarded to ML fraud detection</span>
+        </div>
+        <div class="stat reveal">
+          <span class="stat__value">20%</span>
+          <span class="stat__label">lower data extraction latency across deployed models</span>
+        </div>
+        <div class="stat reveal">
+          <span class="stat__value">4</span>
+          <span class="stat__label">peer-reviewed publications (journal + IEEE)</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- **** About **** -->
+    <section id="about" class="section">
+      <div class="container about">
+        <div class="about__image reveal">
+          <img src="assets/profile.jpeg" alt="Portrait of Abbas Meghani" width="300" height="300" />
+        </div>
+        <div class="about__text">
+          <p class="eyebrow reveal">About</p>
+          <h2 class="section__title reveal">Data science that ships to production.</h2>
+          <p class="reveal">
+            I'm a Senior Data Scientist at <strong>Shift Technology</strong>, where I work on the ML and data
+            systems that power fraud detection for insurers around the world. My work sits where modelling meets
+            engineering: feature pipelines, entity resolution, and the data layers that keep models fast and
+            reliable for every client.
+          </p>
+          <p class="reveal">
+            I hold an MSc in Data Science from HEC Montréal and have published ML research in the
+            <em>Journal of Economic Surveys</em>, using topic models to map thirty years of finance literature.
+            Before data science, I was a backend software engineer, which is why I care as much about latency
+            and reliability as I do about model quality.
+          </p>
+          <p class="reveal">
+            Outside work, you'll find me on long hikes, reading, or over a warm cup of tea.
+          </p>
+
+          <div class="skills reveal" aria-label="Skills">
+            <div class="skills__group">
+              <h3>ML &amp; Data</h3>
+              <ul class="chips">
+                <li>Python</li>
+                <li>pandas</li>
+                <li>NumPy</li>
+                <li>scikit-learn</li>
+                <li>R</li>
+                <li>SQL / T-SQL</li>
+                <li>ElasticSearch</li>
+              </ul>
+            </div>
+            <div class="skills__group">
+              <h3>Retrieval &amp; GenAI</h3>
+              <ul class="chips">
+                <li>RAG pipelines</li>
+                <li>Embeddings</li>
+                <li>pgvector</li>
+              </ul>
+            </div>
+            <div class="skills__group">
+              <h3>Engineering</h3>
+              <ul class="chips">
+                <li>FastAPI</li>
+                <li>C# / .NET Core</li>
+                <li>REST APIs</li>
+                <li>Docker</li>
+                <li>PostgreSQL</li>
+                <li>GitHub Actions</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- **** Experience **** -->
+    <section id="experience" class="section section--alt">
       <div class="container">
-        <div class="row">
-          <div class="col-sm">
-            <p class="hero-cta load-hidden">
-              <a rel="noreferrer" class="cta-btn cta-btn-top" href="#education">Education</a>
-            </p>
-          </div>
-          <div class="col-sm">
-            <p class="hero-cta load-hidden">
-              <a rel="noreferrer" class="cta-btn cta-btn-top" href="#experience">Experience</a>
-            </p>
-          </div>
-          <div class="col-sm">
-            <p class="hero-cta load-hidden">
-              <a rel="noreferrer" class="cta-btn cta-btn-top" href="#projects">Projects</a>
-            </p>
-          </div>
-          <div class="col-sm">
-            <p class="hero-cta load-hidden">
-              <a rel="noreferrer" class="cta-btn cta-btn-top" href="#research">Research</a>
-            </p>
-          </div>
-          <div class="col-sm">
-            <p class="hero-cta load-hidden">
-              <a rel="noreferrer" class="cta-btn cta-btn-top" href="#contact">Contact Me</a>
-            </p>
-          </div>
-        </div>
-      </div>
+        <p class="eyebrow reveal">Experience</p>
+        <h2 class="section__title reveal">Where I've worked</h2>
 
-    </div>
-  </section>
-  <!-- /END Hero Section -->
-
-  <!-- **** About Section **** -->
-  <section id="about">
-    <div class="container">
-      <h2 class="section-title load-hidden">About me</h2>
-      <div class="row about-wrapper">
-        <div class="col-md-6 col-sm-12">
-          <div class="about-wrapper__image load-hidden">
-            <img alt="Profile Image" class="img-fluid rounded shadow-lg" height="auto" width="300px"
-              src="assets/profile.jpeg" />
-          </div>
-        </div>
-        <div class="col-md-6 col-sm-12">
-          <div class="about-wrapper__info load-hidden">
-            <p class="about-wrapper__info-text">
-              I am a Software Engineer with experience working in an intensive startup environment alongside an AGILE
-              team.
-              I have more than three years of experience in object-oriented programming, particularly in the development of
-              high-volume, low-latency projects.
-              My professional track record highlights my proficiency in tackling intricate data-intensive applications,
-              with a keen focus on optimizing efficiency.
-            </p>
-            <p class="about-wrapper__info-text">
-              Outside of my professional commitments, I enjoy going on long hikes in nature, reading books and having a warm cup of tea.
-            </p>
-            <span class="d-flex mt-3">
-              <a rel="noreferrer" target="_blank" data-lazy="true" class="cta-btn cta-btn--resume" href="assets/resume.pdf">
-                View Resume
-              </a>
-            </span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- /END About Section -->
-
-  <!-- **** Education Section **** -->
-  <section id="education" class="projects">
-    <div class="container">
-      <div class="project-wrapper">
-        <h2 class="section-title dark-blue-text">Education</h2>
-
-        <div class="row">
-          <div class="col-lg-5 col-sm-12">
-            <div class="project-wrapper__text load-hidden">
-              <h3 class="project-wrapper__text-title">MSc: Data Science</h3>
-              <div>
-                <p class="mb-5">
-                  at HEC Montréal, University of Montréal
-                </p>
-              </div>
-              <a rel="noreferrer" target="_blank" class="cta-btn cta-btn--hero" href="https://www.hec.ca/en/">
-                Website
-              </a>
-            </div>
-          </div>
-          <div class="col-lg-7 col-sm-12">
-            <div class="project-wrapper__text load-hidden">
-              <p class="mb-7">
-              <p><b>GPA: </b>3.6</p>
-              <p><b>Notable Achievements: </b>Received a scholarship for Fin-ML Research and
-                was hired three times for distinct programming projects,
-                two of which were used to facilitate course capstone projects.</p>
-              <p>
-                <b>Coursework: </b>Decision Analysis, Machine Learning, Machine Learning II: Deep Learning,
-                Adv. Statistics, Forecasting Methods, Algorithms, Complex Networks Analysis, Optimization, Statistical
-                Modelling
-              </p>
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-lg-5 col-sm-12">
-            <div class="project-wrapper__text load-hidden">
-              <h3 class="project-wrapper__text-title">BEng: Computer Engineering</h3>
-              <div>
-                <p class="mb-5">
-                  at Rizvi College Of Engineering (RCOE), University of Mumbai
-                </p>
-              </div>
-              <a rel="noreferrer" target="_blank" class="cta-btn cta-btn--hero" href="https://eng.rizvi.edu.in/comp/">
-                Website
-              </a>
-            </div>
-          </div>
-          <div class="col-lg-7 col-sm-12">
-            <div class="project-wrapper__text load-hidden">
-              <p class="mb-7">
-              <p><b>GPA: </b>8.4</p>
-              <p><b>Notable Achievement: </b>One of only two teams in my cohort to receive research funding for the engineering capstone project.</p>
-              <p>
-                <b>Coursework: </b>Data Structures, Object Oriented Programming, Data Management Systems, Distributed
-                Systems, Operating
-                Systems,
-                Adv. Applied Mathematics I/ II/ III/ IV, Digital Logic Design, Microprocessor, Circuits, Web
-                Technologies
-              </p>
-              </p>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-  <!-- /END Education Section -->
-
-  <hr>
-
-  <!-- **** Experience Section **** -->
-  <section id="experience" class="projects">
-    <div class="container">
-      <div class="project-wrapper">
-        <h2 class="section-title dark-blue-text">Experience</h2>
-
-        <div class="row">
-          <div class="col-lg-5 col-sm-12">
-            <div class="project-wrapper__text load-hidden">
-              <h3 class="project-wrapper__text-date">Apr 2024 – Present</h3>
-              <h3 class="project-wrapper__text-title">Sr Applied Data Scientist — Backend & Data Infrastructure</h3>
-              <h3 class="project-wrapper__text-date">Feb 2022 – Apr 2024</h3>
-              <h3 class="project-wrapper__text-title">Applied Data Scientist — Backend & Data Infrastructure</h3>
-              <div>
-                <p class="mb-5">
-                  at <b class="text-color-main">Shift-Technology</b>, a Fintech Unicorn Startup<br>
-                </p>
-                <p class="mb-5">
-                  <b>Tech Stack: </b> C#, Python, SQL, ElasticSearch, Docker, GCP Cloud Run, AWS <br>
-                  <b>CI/ CD: </b> TeamCity, Octopus, GitHub Actions
-                </p>
-              </div>
-              <a rel="noreferrer" target="_blank" class="cta-btn cta-btn--hero"
-                href="https://www.shift-technology.com/">
-                Website
-              </a>
-            </div>
-          </div>
-          <div class="col-lg-7 col-sm-12">
-            <div class="project-wrapper__text load-hidden">
-              <p class="mb-7">
-              <ul>
-                <li>
-                  <p>Led ORM redesign reducing data extraction time by 20%, improving backend scalability across all client environments.</p>
-                </li>
-                <li>
-                  <p>Integrated ElasticSearch API into the fraud detection backend, enabling high-performance entity search at scale.</p>
-                </li>
-                <li>
-                  <p>Built a factory-based data transformation library in C#/.NET supporting 15+ enterprise clients with minimal per-client config.</p>
-                </li>
-                <li>
-                  <p>Refactored the ML microservices data transformation layer, delivering a 5% company-wide processing efficiency gain.</p>
-                </li>
-                <li>
-                  <p>Coded hash-based deduplication filters to efficiently ingest and process tables with up to 9 billion highly duplicated rows within server memory constraints.</p>
-                </li>
-              </ul>
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-lg-5 col-sm-12">
-            <div class="project-wrapper__text load-hidden">
-              <h3 class="project-wrapper__text-date">June 2021 – Feb 2022</h3>
-              <h3 class="project-wrapper__text-title">Software Engineer — Backend</h3>
-              <div>
-                <p class="mb-5">
-                  at <b class="text-color-main">DocuFire</b><br>
-                </p>
-                <p class="mb-5">
-                  <b>Tech Stack: </b> C#, .NET Core, SQL <br>
-                  <b>CI/ CD: </b> Windows Installer, InstallShield
-                </p>
-              </div>
-              <a rel="noreferrer" target="_blank" class="cta-btn cta-btn--hero" href="https://www.docufire.com/">
-                Website
-              </a>
-            </div>
-          </div>
-          <div class="col-lg-7 col-sm-12">
-            <div class="project-wrapper__text load-hidden">
-              <p class="mb-7">
-              <ul>
-                <li>
-                  <p>Increased document generation throughput by 15% via async parallel processing of pages in the PDF generation module of the core ERP system.</p>
-                </li>
-                <li>
-                  <p>Migrated legacy data access layer to a REST API with full unit test coverage, preserving all existing endpoints and strengthening system reliability.</p>
-                </li>
-                <li>
-                  <p>Designed and developed the MVC backend for an ASP.NET Core web application, seamlessly integrating it with the REST API.</p>
-                </li>
-              </ul>
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-lg-5 col-sm-12">
-            <div class="project-wrapper__text load-hidden">
-              <h3 class="project-wrapper__text-date">May 2021 – Oct 2023 (Part Time)</h3>
-              <h3 class="project-wrapper__text-title">Research Assistant — Backend & ML Systems</h3>
-              <div>
-                <p class="mb-5">
-                  at <b class="text-color-main">HEC Montréal, University of Montréal</b><br>
-                </p>
-                <p class="mb-5">
-                  <b>Tech Stack: </b> C#, ASP.NET Core, MySQL, Python <br>
-                </p>
-              </div>
-              <a rel="noreferrer" target="_blank" class="cta-btn cta-btn--hero" href="https://www.hec.ca/en/">
-                Website
-              </a>
-            </div>
-          </div>
-          <div class="col-lg-7 col-sm-12">
-            <div class="project-wrapper__text load-hidden">
-              <p class="mb-7">
-              <ul>
-                <li>
-                  <p>Built a scalable ASP.NET Core web app with MySQL for the 'Sports Analytics' course, including user registration, team and game sign-ups, and an on-server ML model simulating sports game outcomes.</p>
-                </li>
-                <li>
-                  <p>Developed Python visualizations for a sports simulation ML model, subsequently adapting them for use on the server.</p>
-                </li>
-              </ul>
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-lg-5 col-sm-12">
-            <div class="project-wrapper__text load-hidden">
-              <h3 class="project-wrapper__text-date">Aug 2021 – Oct 2021 (Part Time)</h3>
-              <h3 class="project-wrapper__text-title">Research Consultant</h3>
-              <div>
-                <p class="mb-5">
-                  at <b class="text-color-main">Sentometrics</b>, writing a Machine Learning research paper<br>
-                </p>
-                <p class="mb-5">
-                  <b>Tech Stack: </b> R, Python <br>
-                </p>
-              </div>
-              <a rel="noreferrer" target="_blank" class="cta-btn cta-btn--hero" href="https://sentometrics.com/">
-                Website
-              </a>
-              <a rel="noreferrer" target="_blank" class="cta-btn text-color-main"
-                href="https://dx.doi.org/10.2139/ssrn.3990436">
-                Publication
-              </a>
-            </div>
-          </div>
-          <div class="col-lg-7 col-sm-12">
-            <div class="project-wrapper__text load-hidden">
-              <p class="mb-7">
-              <ul>
-                <li>
-                  <p>Used topic modeling (R) to analyze and gain insights about financial research over time.</p>
-                </li>
-                <li>
-                  <p>Scraped data, preprocessed text, and annotated the text corpus.</p>
-                </li>
-                <li>
-                  <p>Created and transformed several covariates for 33 Financial Journals.</p>
-                </li>
-                <li>
-                  <p>Implemented, optimized, and compared multiple Structural Topic Models for relevant insights.</p>
-                </li>
-              </ul>
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-lg-5 col-sm-12">
-            <div class="project-wrapper__text load-hidden">
-              <h3 class="project-wrapper__text-date">Sept 2020 – Apr 2021 (Part Time)</h3>
-              <h3 class="project-wrapper__text-title">Research Assistant</h3>
-              <div>
-                <p class="mb-5">
-                  at <b class="text-color-main">ERPSim Lab, HEC Montréal</b><br>
-                </p>
-                <p class="mb-5">
-                  <b>Tech Stack: </b> Python, SAS <br>
-                </p>
-              </div>
-              <a rel="noreferrer" target="_blank" class="cta-btn cta-btn--hero" href="https://erpsim.hec.ca/">
-                Website
-              </a>
-            </div>
-          </div>
-          <div class="col-lg-7 col-sm-12">
-            <div class="project-wrapper__text load-hidden">
-              <p class="mb-7">
-              <ul>
-                <li>
-                  <p>Documenting and verifying validity (Python) of simulated data for use in Cortex - a platform for
-                    learning and practicing data science concepts.
-                </li>
-                <li>
-                  <p>Programming in SAS and writing guides for students and teachers about using SAS-EM effectively to
-                    analyze the simulated datasets.</p>
-                </li>
-              </ul>
-              </p>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-  <!-- /END Experience Section -->
-
-  <hr>
-
-  <!-- **** Projects Section **** -->
-  <section id="projects" class="projects">
-    <div class="container">
-      <div class="project-wrapper">
-        <h2 class="section-title dark-blue-text">Projects</h2>
-
-        <!-- Notice: each .row is a project -->
-        <div class="row">
-          <div class="col-lg-4 col-sm-12">
-            <div class="project-wrapper__text load-hidden">
-              <h3 class="project-wrapper__text-date">Apr 2021 (Python)</h3>
-              <h3 class="project-wrapper__text-title">Complex Networks</h3>
-              <div>
-                <p class="mb-4">
-                <ul>
-                  <li>
-                    <p>
-                      Created a complex road network of bike sharing service usage by overlaying it with a road network
-                      of the city.
-                    </p>
-                  </li>
-                  <li>
-                    <p>
-                      Converted data into daily and weekly demand time series and incorporated conversion of time series
-                      data into complex networks using distance metrics and also a visibility graph.
-                    </p>
-                  </li>
-                  <li>
-                    <p>
-                      Analyzed networks using global/local network descriptors, & community detection algorithms.
-                    </p>
-                  </li>
-                </ul>
-                </p>
-              </div>
-              <a rel="noreferrer" target="_blank" data-lazy="true" class="cta-btn cta-btn--hero" href="assets/complexnetworks.pdf">
-                Report
-              </a>
-            </div>
-          </div>
-          <div class="col-lg-8 col-sm-12">
-            <div class="project-wrapper__image load-hidden">
-              <a rel="noreferrer" data-lazy="true" href="assets/complexnetworks.pdf" target="_blank">
-                <div data-tilt data-tilt-max="4" data-tilt-glare="true" data-tilt-max-glare="0.5"
-                  class="thumbnail rounded js-tilt">
-                  <img alt="Project Image" loading="lazy" class="img-fluid" src="assets/complexnetworks.png" />
-                </div>
-              </a>
-            </div>
-          </div>
-        </div>
-        <!-- /END Project -->
-
-        <!-- Notice: each .row is a project -->
-        <div class="row">
-          <div class="col-lg-4 col-sm-12">
-            <div class="project-wrapper__text load-hidden">
-              <h3 class="project-wrapper__text-date">Oct 2020 (Python)</h3>
-              <h3 class="project-wrapper__text-title">Convex Hull Algorithms</h3>
-              <div>
-                <p class="mb-4">
-                <ul>
-                  <li>
-                    <p>
-                      The project features a GUI for visualizing convex hull algorithms using Python & Tkinter.
-                    </p>
-                  </li>
-                  <li>
-                    <p>
-                      Users can explore algorithms like Brute Force, Jarvis' March, Graham Scan, and Divide &
-                      Conquer by generating random points.
-                    </p>
-                  </li>
-                  <li>
-                    <p>
-                      A specialized LeftHull algorithm is included for polygon
-                      convex hulls.
-                    </p>
-                  </li>
-                  <li>
-                    <p>
-                      These algorithms are implemented from the psuedocode in their original
-                      research papers, wherever available.
-                    </p>
-                  </li>
-                </ul>
-                </p>
-              </div>
-              <a rel="noreferrer" target="_blank" class="cta-btn cta-btn--hero"
-                href="https://github.com/abbasmg/convex-hull-algo">
-                See Code
-              </a>
-            </div>
-          </div>
-          <div class="col-lg-8 col-sm-12">
-            <div class="project-wrapper__image load-hidden">
-              <a rel="noreferrer" href="https://github.com/abbasmg/convex-hull-algo" target="_blank">
-                <div data-tilt data-tilt-max="4" data-tilt-glare="true" data-tilt-max-glare="0.5"
-                  class="thumbnail rounded js-tilt">
-                  <img alt="Project Image" loading="lazy" class="img-fluid" src="assets/convexhull.png" />
-                </div>
-              </a>
-            </div>
-          </div>
-        </div>
-        <!-- /END Project -->
-
-        <!-- Notice: each .row is a project -->
-        <div class="row">
-          <div class="col-lg-4 col-sm-12">
-            <div class="project-wrapper__text load-hidden">
-              <h3 class="project-wrapper__text-date">Nov 2019 (Python)</h3>
-              <h3 class="project-wrapper__text-title">Convolutional Neural Networks</h3>
-              <div>
-                <p class="mb-4">
-                  We classify images of recyclable trash into different categories by using the following:
-                <ul>
-                  <li>
-                    <p>
-                      Support Vector Machines (SVM): One vs Many
-                    </p>
-                  </li>
-                  <li>
-                    <p>
-                      Convolutional Neural Networks (CNN):
-                    </p>
-                    <ul>
-                      <li>
-                        <p>
-                          Architectures: VGG10, VGG13, VGG16, ResNet34
-                        </p>
-                      </li>
-                      <li>
-                        <p>
-                          Hyperparameters: Pooling, Batch Normalization, Depth, Data Augmentation
-                        </p>
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
-                </p>
-              </div>
-              <a rel="noreferrer" target="_blank" data-lazy="true" class="cta-btn cta-btn--hero" href="assets/cnn.pdf">
-                Poster
-              </a>
-            </div>
-          </div>
-          <div class="col-lg-8 col-sm-12">
-            <div class="project-wrapper__image load-hidden">
-              <a rel="noreferrer" data-lazy="true" href="assets/cnn.pdf" target="_blank">
-                <div data-tilt data-tilt-max="4" data-tilt-glare="true" data-tilt-max-glare="0.5"
-                  class="thumbnail rounded js-tilt">
-                  <img alt="Project Image" loading="lazy" class="img-fluid" src="assets/cnn.png" />
-                </div>
-              </a>
-            </div>
-          </div>
-        </div>
-        <!-- /END Project -->
-      </div>
-    </div>
-  </section>
-  <!-- /END Projects Section -->
-
-  <hr>
-
-  <!-- **** Publications Section **** -->
-  <section id="research" class="projects">
-    <div class="container">
-      <div class="project-wrapper">
-        <h2 class="section-title dark-blue-text">Research</h2>
-
-        <!-- Notice: each .row is a project -->
-        <div class="row">
-          <div class="col-lg-4 col-sm-12">
-            <div class="project-wrapper__text load-hidden">
-              <h3 class="project-wrapper__text-date">Jun 2023 (R, Python)</h3>
-              <h3 class="project-wrapper__text-title">Thirty years of academic finance</h3>
-              <div>
-                <p class="mb-5">
-                  in <b class="text-color-main">The Journal Of Economic Surveys</b><br>
-                </p>
-                <p class="mb-4">
-                  Employed an unsupervised Machine Learning Bayesian Model, the Structural Topic Model, to
-                  analyze financial journals.
-                </p>
-              </div>
-              <a rel="noreferrer" target="_blank" class="cta-btn cta-btn--hero"
-                href="https://doi.org/10.1111/joes.12571">
-                Paper
-              </a>
-            </div>
-          </div>
-          <div class="col-lg-8 col-sm-12">
-            <div class="project-wrapper__image load-hidden">
-              <a rel="noreferrer" href="https://doi.org/10.1111/joes.12571" target="_blank">
-                <div data-tilt data-tilt-max="4" data-tilt-glare="true" data-tilt-max-glare="0.5"
-                  class="thumbnail rounded js-tilt">
-                  <img alt="Project Image" loading="lazy" class="img-fluid" src="assets/stm.jpg" />
-                </div>
-              </a>
-            </div>
-          </div>
-        </div>
-        <!-- /END Project -->
-
-        <!-- Notice: each .row is a project -->
-        <div class="row">
-          <div class="col-lg-4 col-sm-12">
-            <div class="project-wrapper__text load-hidden">
-              <h3 class="project-wrapper__text-date">May 2018 (Java)</h3>
-              <h3 class="project-wrapper__text-title">Wearable Navigation and Assistive System for Visually Impaired
+        <ol class="timeline">
+          <li class="timeline__item reveal">
+            <div class="timeline__head">
+              <h3 class="timeline__org">
+                <a href="https://www.shift-technology.com/" target="_blank" rel="noreferrer">Shift Technology</a>
               </h3>
-              <div>
-                <p class="mb-5">
-                  in the <b class="text-color-main">2nd International Conference on Trends in Electronics and
-                    Informatics</b>, published by <b class="text-color-main">IEEE</b><br>
-                </p>
-                <p class="mb-4">
-                  Developed an Arduino project integrating ultrasonic sound sensors and a gyroscope onto a glove,
-                  accompanied by custom code aimed at enhancing navigation for individuals with visual impairments.
-                </p>
-              </div>
-              <a rel="noreferrer" target="_blank" class="cta-btn cta-btn--hero"
-                href="https://ieeexplore.ieee.org/document/8553690">
-                Paper
-              </a>
+              <p class="timeline__meta">AI-driven fraud detection for insurance · Feb 2022 – Present</p>
             </div>
-          </div>
-          <div class="col-lg-8 col-sm-12">
-            <div class="project-wrapper__image load-hidden">
-              <a rel="noreferrer" href="https://ieeexplore.ieee.org/document/8553690" target="_blank">
-                <div data-tilt data-tilt-max="4" data-tilt-glare="true" data-tilt-max-glare="0.5"
-                  class="thumbnail rounded js-tilt">
-                  <img alt="Project Image" loading="lazy" class="img-fluid" src="assets/glove.png" />
-                </div>
-              </a>
-            </div>
-          </div>
-        </div>
-        <!-- /END Project -->
 
-        <!-- Notice: each .row is a project -->
-        <div class="row">
-          <div class="col-lg-4 col-sm-12">
-            <div class="project-wrapper__text load-hidden">
-              <h3 class="project-wrapper__text-date">Dec 2017 (Java, Android Studio)</h3>
-              <h3 class="project-wrapper__text-title">Intelligent disaster warning and response system with dynamic
-                route selection for evacuation
+            <div class="role">
+              <div class="role__head">
+                <h4>Senior Data Scientist</h4>
+                <span class="role__date">Apr 2024 – Present</span>
+              </div>
+              <ul>
+                <li>Optimized ML fraud detection pipelines, reducing data extraction latency by <strong>20%</strong>
+                  across all deployed model environments.</li>
+                <li>Integrated ElasticSearch entity resolution into the ML inference pipeline, improving model input
+                  data quality at query time.</li>
+              </ul>
+            </div>
+
+            <div class="role">
+              <div class="role__head">
+                <h4>Data Scientist</h4>
+                <span class="role__date">Feb 2022 – Apr 2024</span>
+              </div>
+              <ul>
+                <li>Built a factory-based feature preparation library for ML microservices, onboarding
+                  <strong>15+ enterprise clients</strong> to ML-powered fraud detection.</li>
+                <li>Refactored the ML feature pipeline, saving thousands of compute hours and delivering a
+                  <strong>5%</strong> company-wide efficiency improvement.</li>
+                <li>Wrote hash-based deduplication filters to ingest tables of up to <strong>9 billion</strong>
+                  highly duplicated rows within server memory limits.</li>
+              </ul>
+            </div>
+
+            <ul class="chips chips--quiet" aria-label="Stack">
+              <li>Python</li>
+              <li>C#</li>
+              <li>SQL</li>
+              <li>ElasticSearch</li>
+              <li>Docker</li>
+            </ul>
+          </li>
+
+          <li class="timeline__item reveal">
+            <div class="timeline__head">
+              <h3 class="timeline__org">
+                <a href="https://www.docufire.com/" target="_blank" rel="noreferrer">DocuFire</a>
               </h3>
-              <div>
-                <p class="mb-5">
-                  in the <b class="text-color-main">2017 International Conference on Intelligent Sustainable
-                    Systems</b>, published by <b class="text-color-main">IEEE</b><br>
-                </p>
-                <p class="mb-4">
-
-                  Created an Android application designed to issue natural disaster warnings and guide users to the
-                  closest warehouse, factoring in considerations such as distance, capacity, and other relevant metrics.
-                </p>
+              <p class="timeline__meta">Document automation · Jun 2021 – Feb 2022</p>
+            </div>
+            <div class="role">
+              <div class="role__head">
+                <h4>Software Engineer, Backend</h4>
+                <span class="role__date">Jun 2021 – Feb 2022</span>
               </div>
-              <a rel="noreferrer" target="_blank" class="cta-btn cta-btn--hero"
-                href="https://ieeexplore.ieee.org/document/8389226">
-                Paper
-              </a>
+              <ul>
+                <li>Increased document generation throughput by <strong>15%</strong> with async parallel page
+                  processing in the core ERP system's PDF module.</li>
+                <li>Migrated the legacy data access layer to a REST API with full unit test coverage, preserving every
+                  existing endpoint.</li>
+              </ul>
             </div>
-          </div>
-          <div class="col-lg-8 col-sm-12">
-            <div class="project-wrapper__image load-hidden">
-              <a rel="noreferrer" href="https://ieeexplore.ieee.org/document/8389226" target="_blank">
-                <div data-tilt data-tilt-max="4" data-tilt-glare="true" data-tilt-max-glare="0.5"
-                  class="thumbnail rounded js-tilt">
-                  <img alt="Project Image" loading="lazy" class="img-fluid" src="assets/disaster.png" />
-                </div>
-              </a>
-            </div>
-          </div>
-        </div>
-        <!-- /END Project -->
+            <ul class="chips chips--quiet" aria-label="Stack">
+              <li>C#</li>
+              <li>.NET Core</li>
+              <li>SQL</li>
+            </ul>
+          </li>
 
-        <!-- Notice: each .row is a project -->
-        <div class="row">
-          <div class="col-lg-4 col-sm-12">
-            <div class="project-wrapper__text load-hidden">
-              <h3 class="project-wrapper__text-date">Oct 2017 (PHP, HTML, CSS)</h3>
-              <h3 class="project-wrapper__text-title">Multi-platform college management framework
-              </h3>
-              <div>
-                <p class="mb-5">
-                  in the <b class="text-color-main">2017 2nd International Conference on Communication and Electronics
-                    Systems</b>, published by <b class="text-color-main">IEEE</b><br>
-                </p>
-                <p class="mb-4">
-                  This project entails the development of a web application aimed at modernizing and optimizing record
-                  management processes in colleges and universities. By digitizing these tasks, it effectively lessens
-                  the administrative burden. The application encompasses features such as an online paper-checking
-                  module, attendance tracking, and a digital notice board, all of which contribute to enhanced
-                  efficiency in academic operations.
-                </p>
+          <li class="timeline__item reveal">
+            <div class="timeline__head">
+              <h3 class="timeline__org">Research roles</h3>
+              <p class="timeline__meta">Part time, alongside my MSc and early career · 2020 – 2023</p>
+            </div>
+            <div class="role">
+              <div class="role__head">
+                <h4>Research Assistant, ML Research · HEC Montréal</h4>
+                <span class="role__date">May 2021 – Oct 2023</span>
               </div>
-              <a rel="noreferrer" target="_blank" class="cta-btn cta-btn--hero"
-                href="https://ieeexplore.ieee.org/document/8321255">
-                Paper
-              </a>
+              <ul>
+                <li>Built a Python ML model simulating sports game outcomes, served inside a live ASP.NET Core web
+                  app used by the Sports Analytics course.</li>
+              </ul>
             </div>
-          </div>
-          <div class="col-lg-8 col-sm-12">
-            <div class="project-wrapper__image load-hidden">
-              <a rel="noreferrer" href="https://ieeexplore.ieee.org/document/8321255" target="_blank">
-                <div data-tilt data-tilt-max="4" data-tilt-glare="true" data-tilt-max-glare="0.5"
-                  class="thumbnail rounded js-tilt">
-                  <img alt="Project Image" loading="lazy" class="img-fluid" src="assets/collegemng.png" />
-                </div>
-              </a>
+            <div class="role">
+              <div class="role__head">
+                <h4>Research Consultant · Sentometrics</h4>
+                <span class="role__date">Aug 2021 – Oct 2021</span>
+              </div>
+              <ul>
+                <li>Scraped, cleaned and annotated a corpus of 33 finance journals, then fit and compared Structural
+                  Topic Models in R. This work became the <em>Journal of Economic Surveys</em> paper.</li>
+              </ul>
             </div>
+            <div class="role">
+              <div class="role__head">
+                <h4>Research Assistant · ERPsim Lab, HEC Montréal</h4>
+                <span class="role__date">Sep 2020 – Apr 2021</span>
+              </div>
+              <ul>
+                <li>Validated simulated datasets in Python and wrote SAS guides for students and teachers on the
+                  Cortex data science learning platform.</li>
+              </ul>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- **** Projects **** -->
+    <section id="projects" class="section">
+      <div class="container">
+        <p class="eyebrow reveal">Projects</p>
+        <h2 class="section__title reveal">Things I've built</h2>
+
+        <article class="feature reveal">
+          <div class="feature__text">
+            <p class="feature__tag">Featured · 2026</p>
+            <h3>ml-serving-api</h3>
+            <p>
+              A containerized model and retrieval serving service. FastAPI serves a scikit-learn model with
+              per-request latency logging, Postgres persistence and pgvector semantic search, tested with pytest
+              and shipped through GitHub Actions CI.
+            </p>
+            <ul class="chips chips--quiet" aria-label="Stack">
+              <li>Python</li>
+              <li>FastAPI</li>
+              <li>Docker</li>
+              <li>PostgreSQL</li>
+              <li>pgvector</li>
+            </ul>
+            <a class="btn btn--primary" href="https://github.com/abbasmg/ml-serving-api" target="_blank"
+              rel="noreferrer">View on GitHub</a>
           </div>
+          <div class="terminal" aria-label="Measured latency">
+            <div class="terminal__bar" aria-hidden="true"><span></span><span></span><span></span></div>
+            <pre><code><span class="t-dim">$</span> measured latency, p95
+<span class="t-key">/predict</span>   <span class="t-val">2.9 ms</span>
+<span class="t-key">/search</span>    <span class="t-val">32.6 ms</span>
+
+<span class="t-dim"># ~200 requests each, single worker</span></code></pre>
+          </div>
+        </article>
+
+        <div class="cards">
+          <article class="card reveal">
+            <a class="card__media" href="assets/complexnetworks.pdf" target="_blank" rel="noreferrer"
+              tabindex="-1" aria-hidden="true">
+              <img src="assets/complexnetworks.png" alt="" loading="lazy" />
+            </a>
+            <div class="card__body">
+              <p class="card__meta">2021 · Python</p>
+              <h3>Complex Networks of Bike Sharing</h3>
+              <p>Overlaid bike-share usage on the city road network, turned demand into time series and visibility
+                graphs, and analyzed them with network descriptors and community detection.</p>
+              <a class="card__link" href="assets/complexnetworks.pdf" target="_blank" rel="noreferrer">Read the
+                report <span aria-hidden="true">→</span></a>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <a class="card__media" href="https://github.com/abbasmg/convex-hull-algo" target="_blank"
+              rel="noreferrer" tabindex="-1" aria-hidden="true">
+              <img src="assets/convexhull.png" alt="" loading="lazy" />
+            </a>
+            <div class="card__body">
+              <p class="card__meta">2020 · Python, Tkinter</p>
+              <h3>Convex Hull Visualizer</h3>
+              <p>A GUI that animates Brute Force, Jarvis' March, Graham Scan and Divide &amp; Conquer, implemented
+                from the pseudocode in the original papers.</p>
+              <a class="card__link" href="https://github.com/abbasmg/convex-hull-algo" target="_blank"
+                rel="noreferrer">See the code <span aria-hidden="true">→</span></a>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <a class="card__media" href="assets/cnn.pdf" target="_blank" rel="noreferrer" tabindex="-1"
+              aria-hidden="true">
+              <img src="assets/cnn.png" alt="" loading="lazy" />
+            </a>
+            <div class="card__body">
+              <p class="card__meta">2019 · Python</p>
+              <h3>Recyclable Trash Classification</h3>
+              <p>Compared one-vs-many SVMs against CNNs (VGG, ResNet34), tuning depth, pooling, batch norm and data
+                augmentation.</p>
+              <a class="card__link" href="assets/cnn.pdf" target="_blank" rel="noreferrer">View the poster <span
+                  aria-hidden="true">→</span></a>
+            </div>
+          </article>
         </div>
-        <!-- /END Project -->
       </div>
-    </div>
-  </section>
-  <!-- /END Projects Section -->
+    </section>
 
-  <!-- **** Contact Section **** -->
-  <section id="contact">
-    <div class="container">
-      <h2 class="section-title">Contact Me</h2>
-      <div class="contact-wrapper load-hidden">
-        <p class="contact-wrapper__text">Toronto, Ontario, Canada</p>
-        <p class="contact-wrapper__text"><b>Number: </b>+1 (438) 866-6499</p>
-        <p class="contact-wrapper__text"><b>Email: </b>abbmeghani@gmail.com</p>
-        <a rel="noreferrer" target="_blank" class="cta-btn cta-btn--resume" href="mailto:abbmeghani@gmail.com">Email
-          Me</a>
+    <!-- **** Research **** -->
+    <section id="research" class="section section--alt">
+      <div class="container">
+        <p class="eyebrow reveal">Research</p>
+        <h2 class="section__title reveal">Publications</h2>
+
+        <article class="pub pub--lead reveal">
+          <img class="pub__image" src="assets/stm.jpg" alt="" loading="lazy" />
+          <div>
+            <p class="pub__venue">Journal of Economic Surveys · 2023</p>
+            <h3><a href="https://doi.org/10.1111/joes.12571" target="_blank" rel="noreferrer">Thirty years of
+                academic finance</a></h3>
+            <p>Applied an unsupervised Bayesian model, the Structural Topic Model, together with text mining to map
+              how three decades of finance research have evolved across 33 journals.</p>
+            <a class="card__link" href="https://doi.org/10.1111/joes.12571" target="_blank" rel="noreferrer">Read
+              the paper <span aria-hidden="true">→</span></a>
+          </div>
+        </article>
+
+        <ul class="pubs">
+          <li class="pub reveal">
+            <p class="pub__venue">IEEE · ICOEI 2018</p>
+            <h3><a href="https://ieeexplore.ieee.org/document/8553690" target="_blank" rel="noreferrer">Wearable
+                navigation and assistive system for the visually impaired</a></h3>
+            <p>A glove with ultrasonic sensors and a gyroscope that guides visually impaired users around
+              obstacles.</p>
+          </li>
+          <li class="pub reveal">
+            <p class="pub__venue">IEEE · ISS 2017</p>
+            <h3><a href="https://ieeexplore.ieee.org/document/8389226" target="_blank" rel="noreferrer">Intelligent
+                disaster warning and response system with dynamic route selection</a></h3>
+            <p>An Android app that issues disaster warnings and routes people to the nearest shelter by distance
+              and capacity.</p>
+          </li>
+          <li class="pub reveal">
+            <p class="pub__venue">IEEE · ICCES 2017</p>
+            <h3><a href="https://ieeexplore.ieee.org/document/8321255" target="_blank" rel="noreferrer">Multi-platform
+                college management framework</a></h3>
+            <p>A web platform that digitizes college records, with online paper checking, attendance and a
+              digital notice board.</p>
+          </li>
+        </ul>
       </div>
-    </div>
-  </section>
-  <!-- /END Contact Section -->
+    </section>
 
-  <!-- **** Footer Section **** -->
-  <footer class="footer navbar-static-bottom">
-    <div class="container">
-      <a rel="noreferrer" href="#top" class="back-to-top">
-        <i class="fa fa-angle-up fa-2x" aria-hidden="true"></i>
-      </a>
-      <div class="social-links">
-        <a rel="noreferrer" href="https://www.linkedin.com/in/abbasmeghani/" target="_blank">
-          <i class="fa fa-linkedin fa-inverse"></i>
-        </a>
-        <a rel="noreferrer" href="https://github.com/abbasmg" target="_blank">
-          <i class="fa fa-github fa-inverse"></i>
-        </a>
+    <!-- **** Education **** -->
+    <section id="education" class="section">
+      <div class="container">
+        <p class="eyebrow reveal">Education</p>
+        <h2 class="section__title reveal">Academic background</h2>
+
+        <div class="edu">
+          <article class="edu__item reveal">
+            <p class="edu__date">2019 – 2021</p>
+            <h3>MSc, Data Science</h3>
+            <p class="edu__school">
+              <a href="https://www.hec.ca/en/" target="_blank" rel="noreferrer">HEC Montréal</a>, University of
+              Montréal
+            </p>
+            <p><strong>GPA 3.6 / 4.3.</strong> Received a scholarship for Fin-ML research, and was hired three times
+              for programming projects, two of which became course capstones.</p>
+            <p class="edu__courses">Machine Learning, Deep Learning, Statistical Learning, Forecasting, Optimization,
+              Complex Networks, Data Mining</p>
+          </article>
+
+          <article class="edu__item reveal">
+            <p class="edu__date">2014 – 2018</p>
+            <h3>BEng, Computer Engineering</h3>
+            <p class="edu__school">
+              <a href="https://eng.rizvi.edu.in/comp/" target="_blank" rel="noreferrer">Rizvi College of
+                Engineering</a>, University of Mumbai
+            </p>
+            <p><strong>GPA 8.4 / 10, top 5%.</strong> One of two teams in my cohort to receive research funding for
+              the capstone project.</p>
+            <p class="edu__courses">Data Structures, OOP, Databases, Distributed Systems, Operating Systems, Applied
+              Mathematics</p>
+          </article>
+        </div>
       </div>
+    </section>
 
-      <hr />
+    <!-- **** Contact **** -->
+    <section id="contact" class="section contact">
+      <div class="container contact__inner reveal">
+        <p class="eyebrow">Contact</p>
+        <h2 class="section__title">Let's talk.</h2>
+        <p class="contact__lead">
+          I'm happy to chat about data science roles, ML systems, or research. The fastest way to reach me is email.
+        </p>
+        <a class="btn btn--primary btn--large" href="mailto:abbmeghani@gmail.com">abbmeghani@gmail.com</a>
+        <p class="contact__links">
+          <a href="https://www.linkedin.com/in/abbasmeghani/" target="_blank" rel="noreferrer">LinkedIn</a>
+          <span aria-hidden="true">·</span>
+          <a href="https://github.com/abbasmg" target="_blank" rel="noreferrer">GitHub</a>
+          <span aria-hidden="true">·</span>
+          <a href="assets/resume.pdf" target="_blank" rel="noreferrer">Resume</a>
+        </p>
+      </div>
+    </section>
+  </main>
 
-      <p class="footer__text">
-        2024 -
-        <a rel="noreferrer" href="https://www.linkedin.com/in/abbasmeghani/" target="_blank">Mohammad Abbas Meghani</a>
-      </p>
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>© <span id="year">2026</span> Mohammad Abbas Meghani</p>
+      <a href="#top">Back to top ↑</a>
     </div>
   </footer>
-  <!-- /END Footer Section -->
 
-  <button id="darkModeToggle" class="dark-mode-toggle" aria-label="Toggle dark mode">
-    <i class="fa fa-moon-o"></i>
-  </button>
-
-  <script defer type="module" src="index.js"></script>
+  <script type="module" src="index.js"></script>
 </body>
 
 </html>
