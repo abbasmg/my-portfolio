@@ -7,8 +7,9 @@ Personal portfolio of Abbas Meghani, Senior Data Scientist. Live at https://abba
 - Static site: HTML, SCSS and vanilla JS, bundled with [Parcel](https://parceljs.org/)
 - No runtime dependencies: icons are inline SVG, scroll reveal uses `IntersectionObserver`
 - Light/dark theme (light by default) with a Toronto day/night hero
-- Docker multi-stage build: Node builds `dist/`, then `nginx:alpine` serves it on port 8080
-- Hosted on Google Cloud Run (scale to zero, max 3 instances)
+- Hosted on **Cloudflare Pages** (free plan): every push to `master` builds and deploys
+- Security headers live in `src/_headers`, which the build copies into `dist/`
+- A Dockerfile + `nginx.conf` are kept for running a production-like copy locally
 
 ## Run locally
 
@@ -26,27 +27,13 @@ docker build -t my-portfolio .
 docker run --rm -p 8080:8080 my-portfolio
 ```
 
-## Deploy to Cloud Run
+## Deploy
 
-Run these in **Google Cloud Shell** (the `>_` icon at the top right of the GCP console), or anywhere `gcloud` is installed:
+Push to `master`. Cloudflare Pages runs `npm run build` (Node 20) and publishes `dist/`.
 
-```sh
-git clone https://github.com/abbasmg/my-portfolio.git   # or: cd my-portfolio && git pull
-cd my-portfolio
+Pages settings: framework preset *None*, build command `npm run build`, output directory `dist`, env var `NODE_VERSION=20`.
 
-gcloud config set project my-portfolio-412007
-
-gcloud run deploy my-portfolio \
-  --source . \
-  --region us-central1 \
-  --port 8080 \
-  --allow-unauthenticated \
-  --max-instances 3
-```
-
-`--source .` sends the code to Cloud Build, which builds the `Dockerfile` and stores the image in Artifact Registry, then rolls out a new revision. The first time, `gcloud` may ask to enable the Cloud Build and Artifact Registry APIs; answer yes. The custom domain mapping stays on the service, so abbasmeghani.com picks up the new revision automatically.
-
-> Use the same service name and region as the existing service (check the Cloud Run console). Deploying under a different name creates a second service instead of updating the live one.
+DNS and email (me@abbasmeghani.com → Gmail via Email Routing) are managed in the same Cloudflare account.
 
 ## Project layout
 
@@ -58,6 +45,7 @@ src/
   styles.scss         Sass entry
   styles/             tokens, base, components, layout, sections
   assets/             images and PDFs, including resume.pdf
-nginx.conf            security headers, caching, gzip
-Dockerfile            build + serve
+  _headers            Cloudflare Pages security headers
+nginx.conf            local Docker only: headers, caching, gzip
+Dockerfile            local Docker only: build + serve
 ```
